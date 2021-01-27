@@ -1,1 +1,29 @@
-<p>perfumen</p>
+<Section class="title">
+    <h2>Perfumes</h2>
+</Section>
+<section class="filter">
+    <div class="type">
+        <p>Perfumes<i class="fas fa-chevron-right"></i></p>
+    </div>
+    <div class="filterProduct">
+        <p>Ordenar Por : </p>
+        <div class="input-field">
+            <select [(ngModel)]="filterOpt" (change)="changeOpt($event)">
+                <option value="" disabled selected>Escoge una opción</option>
+                <option value="bestSeller">Lo más vendido</option>
+                <option value="promotion">Mayores descuentos</option>
+            </select>
+          </div>
+    </div>
+</section>
+<section class="sectionProduct">
+    <section class="container containerProd">
+    <section *ngFor="let data of productsPerfume">
+        <app-card-product [objProduct]="data"></app-card-product>
+    </section>
+</section>
+
+</section>
+<section class="btnMoreProduct">
+    <a class="waves-effect waves-light btn">CARGAR MÁS PRODUCTOS</a>
+</section>

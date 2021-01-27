@@ -8,6 +8,7 @@ nav{
     padding-left: 50px;
     padding-right: 50px;
     font-size: calc(1.3em + 1.3vw);
+    color: #000000;
 }
 .scrollActive{
     background-color: #fff;
@@ -28,4 +29,43 @@ nav{
         padding-left: 0px;
         padding-right: 0px;
     }
+}
+.shopping-cart{
+    color: #333333;
+    float: right;
+    margin:20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #F5F5F5;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+.item-cart{
+    display: flex;
+    flex-direction: row;
+}
+.hidden{   
+    display: none;
+}
+
+.btn{
+    background: #8D93BC;
+}
+.product-image{
+    margin-right: 10px;
+}
+.product-image img{
+    width: 89px;
+    height: 74px;
+}
+
+.name-product{
+    display: flex;
+    margin-right: 10px;
+    justify-content: space-between;
+}
+.name-product div{
+    margin-right: 20px;
 }

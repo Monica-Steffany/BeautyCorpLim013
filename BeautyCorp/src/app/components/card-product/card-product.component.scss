@@ -1,0 +1,53 @@
+//cardProduct
+.cardProduct{
+    height: 370px;
+    width: 250px;
+}
+.cardImg{
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+.imgProduct{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgProduct img{
+    height: 100%;
+}
+.dsctoProduct{
+    background-color: #EA0029;
+    color:#fff;
+    position: absolute;
+    bottom: 0;
+    padding: 5px ;
+}
+.textProduct{
+    height: 75%;
+    text-align: center;
+}
+.textProduct p{
+    padding: 0px;
+    margin: 0px;
+}
+.infoProduct{
+    height: 40%;
+}
+.textProduct p i{
+    color: rgba(7, 7, 7, 0.753);
+}
+.card-action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    cursor: pointer;
+}
+.unid{
+    color:  #8052a459;
+    font-size: calc(0.4em + 0.4vw);
+}

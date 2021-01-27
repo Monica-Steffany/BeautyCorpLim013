@@ -33,7 +33,7 @@ const routes: Routes = [
   ]
 },
 {path:'payments', component:EsikaPaymentsComponent},
-{path:'itemProduct', component:ItemProductComponent}
+{path:'itemProduct', component:ItemProductComponent},
 ];
 
 @NgModule({

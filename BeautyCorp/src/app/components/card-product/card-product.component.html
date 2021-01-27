@@ -1,0 +1,26 @@
+ <section class="card cardProduct">
+    <div class="cardImg">
+        <div class="imgProduct">
+            <img src="{{objProduct.imgUrl}}">
+        </div>
+        <p class="dsctoProduct">{{objProduct.discount}}% DSCTO.</p>
+    </div>
+    <div class="infoProduct">
+        <div class="textProduct">
+            <p>{{objProduct.name}}</p>
+            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            <p><s class="price1">Antes S/{{objProduct.price}}</s></p>
+            <p class="price2">Ahora S/{{promotionPrice}}</p>
+            <p class="unid">{{objProduct.salesUnits}} Vendidos</p>
+        </div>
+        <div class="card-action" (click)="showModal()">
+            <a style="color: #8052A4">VER PRODUCTO <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+ </section>
+ <app-item-product 
+[visible]="modalVisibility" 
+[detailProduct]="objProduct"
+(close)="closeModal($event)"
+>
+</app-item-product>

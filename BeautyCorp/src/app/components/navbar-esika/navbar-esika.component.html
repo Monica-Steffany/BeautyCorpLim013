@@ -2,7 +2,7 @@
 <div (window:scroll)="scroll($event)">
     <nav [ngClass]="isScrollActive===true?'scrollActive':''">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo logo">ÉSIKA</a>
+            <a href="#!" class="brand-logo logo">ésika</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class=" menu fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
             <li><a routerLink="/esika">INICIO</a></li>
@@ -13,11 +13,32 @@
             <li><a routerLink="bodyTreatment">TRATAMIENTO CORPORAL</a></li>
             <li><a routerLink="accessories">ACCESORIOS COSMÉTICOS</a></li>
             <li><a routerLink="/"><i class="fas fa-user"></i></a></li>
-            <li><a routerLink="/"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a (click)="cart()"><i class="fas fa-shopping-cart"></i></a></li>
             <li><a routerLink="/"><i class="fas fa-search"></i></a></li>
             
 
             </ul>
+        </div>
+        <div id="shopping-cart" class="shopping-cart hidden"><p>Carrito de compras</p>
+            <tr *ngFor= "let product of products; index as i">
+        <div class="item-cart">
+            <div class="product-image">
+                <img src="https://cdn1-prd.beautymovers.com/sys-master/s3medias/h60/h46/10599977353246/200092434_imagenProducto_prodGallery_superZoom"
+                    alt="Omar Dsoky">
+
+            </div>
+            <div class="name-product">
+                <div>{{product.name}}</div>
+                <div>{{product.price}}</div>
+            </div>
+            <div class="icon-exit" (click)="exit()"><i class="fas fa-times"></i></div>
+        </div>
+        </tr>
+        <div>
+            <button class="btn">
+                <span class="buy">IR A PAGAR</span>
+            </button>
+        </div>
         </div>
         <ul class="sidenav" id="mobile-demo">
             <li><a routerLink="/esika">INICIO</a></li>

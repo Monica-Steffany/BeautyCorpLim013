@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service';
+declare const M: any;
 
 @Component({
   selector: 'app-personal-care',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalCareComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  productsPerfume:any=[];
+  filterOpt:string;
+  changeOpt(event){
+    if(this.filterOpt==='bestSeller'){
+      this.productsPerfume.sort((a,b)=>{
+        return a.salesUnits-b.salesUnits;
+      }).reverse();
+    }
+    if(this.filterOpt==='promotion'){
+      this.productsPerfume.sort((a,b)=>{
+        return a.discount-b.discount;
+      }).reverse();
+    }
   }
 
+  constructor(private firestoreService: FirebaseService) { }
+
+  ngOnInit(): void {
+    M.AutoInit();
+    this.firestoreService.getProducts('cuidado personal').subscribe((catsSnapshot) => {
+      this.productsPerfume = [];
+      catsSnapshot.forEach((catData: any) => {
+        this.productsPerfume.push({id: catData.payload.doc.id, ...catData.payload.doc.data()});
+      })
+    });
+  }
 }

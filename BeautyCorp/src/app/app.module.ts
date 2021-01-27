@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +29,7 @@ import { FooterPaymentsComponent } from './components/footer-payments/footer-pay
 import { NavbarPaymentsComponent } from './components/navbar-payments/navbar-payments.component';
 import { ContentPaymentsComponent } from './components/content-payments/content-payments.component';
 import { ItemProductComponent } from './components/item-product/item-product.component';
+import { CardProductComponent } from './components/card-product/card-product.component';
 
 @NgModule({
   declarations: [
@@ -49,12 +55,15 @@ import { ItemProductComponent } from './components/item-product/item-product.com
     NavbarPaymentsComponent,
     ContentPaymentsComponent,
     ItemProductComponent,
+    CardProductComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

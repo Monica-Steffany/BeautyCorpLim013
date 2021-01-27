@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "beautycorp013": {
+      "hosting": {
+        "BeautyCorp": [
+          "beautycorp013"
+        ]
+      }
+    }
+  }
+}
